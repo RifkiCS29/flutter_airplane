@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "461951356314",
+    "project_id": "airplane-6c699",
+    "storage_bucket": "airplane-6c699.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461951356314:android:3f7f628ceff63f79a8fe23",
+        "android_client_info": {
+          "package_name": "com.example.flutter_airplane"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "461951356314-dvrg040sdtkgjih8ivol8pr4o9036mpv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDM4O2QlmX7GY0DtJ1D91zlofB8SXUwLVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "461951356314-dvrg040sdtkgjih8ivol8pr4o9036mpv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
