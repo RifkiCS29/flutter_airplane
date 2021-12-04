@@ -10,9 +10,10 @@ class DestinationService {
       QuerySnapshot result = await _destinationReference.get();
       
       List<DestinationModel> destinations = result.docs.map(
-        (data) => DestinationModel.fromJson(
-          data.id, data.data() as Map<String, dynamic>)
+        (destination) => DestinationModel.fromJson(
+          destination.id, destination.data() as Map<String, dynamic>)
       ).toList();
+      
       return destinations;
     } catch (e) {
       throw e;
