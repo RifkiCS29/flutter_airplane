@@ -8,6 +8,8 @@ import 'cubit/page_cubit/page_cubit.dart';
 import 'cubit/seat_cubit/seat_cubit.dart';
 import 'cubit/transaction_cubit/transaction_cubit.dart';
 import 'ui/pages/get_started_page.dart';
+import 'ui/pages/sign_in_page.dart';
+import 'ui/pages/sign_up_page.dart';
 import 'ui/pages/splash_page.dart';
 
 void main() async {
@@ -44,8 +46,8 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => SplashPage(),
           '/get-started': (context) => GetStartedPage(),
-          // '/sign-up': (context) => SignUpPage(),
-          // '/sign-in': (context) => SignInPage(),
+          '/sign-up': (context) => SignUpPage(),
+          '/sign-in': (context) => SignInPage(),
           // '/bonus': (context) => BonusPage(),
           // '/main': (context) => MainPage(),
           // '/success': (context) => SuccessCheckoutPage(),
