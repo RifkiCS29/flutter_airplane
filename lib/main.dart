@@ -7,6 +7,7 @@ import 'cubit/destination_cubit/destination_cubit.dart';
 import 'cubit/page_cubit/page_cubit.dart';
 import 'cubit/seat_cubit/seat_cubit.dart';
 import 'cubit/transaction_cubit/transaction_cubit.dart';
+import 'ui/pages/bonus_page.dart';
 import 'ui/pages/get_started_page.dart';
 import 'ui/pages/sign_in_page.dart';
 import 'ui/pages/sign_up_page.dart';
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
           '/get-started': (context) => GetStartedPage(),
           '/sign-up': (context) => SignUpPage(),
           '/sign-in': (context) => SignInPage(),
-          // '/bonus': (context) => BonusPage(),
+          '/bonus': (context) => BonusPage(),
           // '/main': (context) => MainPage(),
           // '/success': (context) => SuccessCheckoutPage(),
         },
