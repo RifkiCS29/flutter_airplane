@@ -1,66 +1,57 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+import 'cubit/auth_cubit/auth_cubit.dart';
+import 'cubit/destination_cubit/destination_cubit.dart';
+import 'cubit/page_cubit/page_cubit.dart';
+import 'cubit/seat_cubit/seat_cubit.dart';
+import 'cubit/transaction_cubit/transaction_cubit.dart';
+import 'ui/pages/get_started_page.dart';
+import 'ui/pages/splash_page.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => PageCubit(),
         ),
+        BlocProvider(
+          create: (context) => AuthCubit(),
+        ),
+        BlocProvider(
+          create: (context) => DestinationCubit(),
+        ),
+        BlocProvider(
+          create: (context) => SeatCubit(),
+        ),
+        BlocProvider(
+          create: (context) => TransactionCubit(),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        routes: {
+          '/': (context) => SplashPage(),
+          '/get-started': (context) => GetStartedPage(),
+          // '/sign-up': (context) => SignUpPage(),
+          // '/sign-in': (context) => SignInPage(),
+          // '/bonus': (context) => BonusPage(),
+          // '/main': (context) => MainPage(),
+          // '/success': (context) => SuccessCheckoutPage(),
+        },
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), 
     );
   }
 }
+
