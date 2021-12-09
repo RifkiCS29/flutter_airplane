@@ -24,6 +24,7 @@ class CustomTextFormField extends StatelessWidget {
         children: [
           Text(
             title,
+            style: blackTextStyle.copyWith(fontSize: 16),
           ),
           SizedBox(
             height: 6,
@@ -32,6 +33,7 @@ class CustomTextFormField extends StatelessWidget {
             cursorColor: kBlackColor,
             obscureText: obscureText,
             controller: controller,
+            style: greyTextStyle.copyWith(fontSize: 16),
             decoration: InputDecoration(
               hintText: hintText,
               border: OutlineInputBorder(

@@ -36,13 +36,20 @@ class MainPage extends StatelessWidget {
           width: double.infinity,
           height: 60,
           margin: EdgeInsets.only(
-            bottom: 30,
+            bottom: 20,
             left: defaultMargin,
             right: defaultMargin,
           ),
           decoration: BoxDecoration(
             color: kWhiteColor,
             borderRadius: BorderRadius.circular(18),
+            boxShadow: [
+              BoxShadow(
+                color: kPrimaryColor.withOpacity(0.5),
+                blurRadius: 2,
+                offset: Offset(1, 1),
+              ),
+            ],
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,

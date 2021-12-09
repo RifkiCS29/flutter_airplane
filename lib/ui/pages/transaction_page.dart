@@ -29,13 +29,16 @@ class _TransactionPageState extends State<TransactionPage> {
         } else if (state is TransactionSuccess) {
           if (state.transactions.length == 0) {
             return Center(
-              child: Text('You don\'t have a transaction'),
+              child: Text(
+                'You don\'t have a transaction',
+                style: greenTextStyle.copyWith(fontSize: 14),
+              ),
             );
           } else {
             return ListView.builder(
                 itemCount: state.transactions.length,
-                padding: EdgeInsets.symmetric(
-                  horizontal: defaultMargin,
+                padding: EdgeInsets.only(
+                  left: defaultMargin, right: defaultMargin, top:defaultMargin, bottom: 100
                 ),
                 itemBuilder: (context, index) {
                   return TransactionCard(
