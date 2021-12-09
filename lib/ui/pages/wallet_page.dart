@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_airplane/cubit/auth_cubit/auth_cubit.dart';
 import 'package:flutter_airplane/theme/theme.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 
 class WalletPage extends StatelessWidget {
   const WalletPage({Key? key}) : super(key: key);
@@ -89,7 +90,11 @@ class WalletPage extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    'IDR ${state.user.balance}',
+                    NumberFormat.currency(
+                      locale: 'id',
+                      symbol: 'IDR ',
+                      decimalDigits: 0,
+                    ).format(state.user.balance),
                     style: whiteTextStyle.copyWith(
                       fontSize: 26,
                       fontWeight: medium,
