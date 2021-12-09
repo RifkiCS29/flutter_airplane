@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'home_page.dart';
 import 'transaction_page.dart';
+import 'wallet_page.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -18,8 +19,8 @@ class MainPage extends StatelessWidget {
           return HomePage();
         case 1:
           return TransactionPage();
-        // case 2:
-        //   return WalletPage();
+        case 2:
+          return WalletPage();
         // case 3:
         //   return SettingPage();
         default:
