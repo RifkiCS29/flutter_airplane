@@ -8,6 +8,8 @@ import 'package:flutter_airplane/ui/widgets/seat_item.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 
+import 'checkout_page.dart';
+
 class ChooseSeatPage extends StatelessWidget {
   final DestinationModel destination;
 
@@ -405,23 +407,23 @@ class ChooseSeatPage extends StatelessWidget {
             onPressed: () {
               int price = destination.price * state.length;
 
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => CheckoutPage(
-              //       TransactionModel(
-              //         destination: destination,
-              //         amountOfTraveler: state.length,
-              //         selectedSeats: state.join(', '),
-              //         insurance: true,
-              //         refundable: false,
-              //         vat: 0.45,
-              //         price: price,
-              //         grandTotal: price + (price * 0.45).toInt(),
-              //       ),
-              //     ),
-              //   ),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CheckoutPage(
+                    TransactionModel(
+                      destination: destination,
+                      amountOfTraveler: state.length,
+                      selectedSeats: state.join(', '),
+                      insurance: true,
+                      refundable: false,
+                      vat: 0.45,
+                      price: price,
+                      grandTotal: price + (price * 0.45).toInt(),
+                    ),
+                  ),
+                ),
+              );
             },
             margin: EdgeInsets.only(
               top: 30,
