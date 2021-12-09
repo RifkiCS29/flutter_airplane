@@ -6,6 +6,8 @@ import 'package:flutter_airplane/ui/widgets/interest_item.dart';
 import 'package:flutter_airplane/ui/widgets/photo_item.dart';
 import 'package:intl/intl.dart';
 
+import 'choose_seat_page.dart';
+
 class DetailPage extends StatelessWidget {
   final DestinationModel destination;
 
@@ -266,12 +268,12 @@ class DetailPage extends StatelessWidget {
                   CustomButton(
                     title: 'Book Now',
                     onPressed: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => ChooseSeatPage(destination),
-                      //   ),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ChooseSeatPage(destination),
+                        ),
+                      );
                     },
                     width: 170,
                   ),
