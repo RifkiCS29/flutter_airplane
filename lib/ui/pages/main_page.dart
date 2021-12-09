@@ -5,6 +5,7 @@ import 'package:flutter_airplane/ui/widgets/custom_bottom_navigation_item.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'home_page.dart';
+import 'transaction_page.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -15,8 +16,8 @@ class MainPage extends StatelessWidget {
       switch (currentIndex) {
         case 0:
           return HomePage();
-        // case 1:
-        //   return TransactionPage();
+        case 1:
+          return TransactionPage();
         // case 2:
         //   return WalletPage();
         // case 3:
