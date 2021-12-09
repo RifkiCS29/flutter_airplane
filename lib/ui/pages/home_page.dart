@@ -6,6 +6,7 @@ import 'package:flutter_airplane/theme/theme.dart';
 import 'package:flutter_airplane/ui/widgets/destination_card.dart';
 import 'package:flutter_airplane/ui/widgets/destination_tile.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -40,7 +41,7 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Hello,\n${state.user.name}',
+                          '${getNameHour()},\n${state.user.name}',
                           style: blackTextStyle.copyWith(
                             fontSize: 24,
                             fontWeight: semiBold,
@@ -151,5 +152,16 @@ class _HomePageState extends State<HomePage> {
         );
       },
     );
+  }
+
+  getNameHour() {
+    var hour = int.parse(DateFormat('H').format(DateTime.now()));
+    if(hour >= 5 && hour <= 11 )  {
+      return 'Good Morning';
+    } else if(hour >= 12 && hour <= 18 )  {
+      return 'Good Afternoon';
+    } else {
+      return 'Selamat Evening';
+    }
   }
 }
