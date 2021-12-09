@@ -1,6 +1,7 @@
 import 'package:flutter_airplane/models/destination_model.dart';
 import 'package:flutter_airplane/theme/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_airplane/ui/pages/detail_page.dart';
 
 class DestinationCard extends StatelessWidget {
   final DestinationModel destination;
@@ -14,12 +15,12 @@ class DestinationCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigator.push(
-        //   context,
-        //   MaterialPageRoute(
-        //     builder: (context) => DetailPage(destination),
-        //   ),
-        // );
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => DetailPage(destination),
+          ),
+        );
       },
       child: Container(
         width: 200,
