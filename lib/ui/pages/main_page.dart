@@ -5,6 +5,7 @@ import 'package:flutter_airplane/ui/widgets/custom_bottom_navigation_item.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'home_page.dart';
+import 'setting_page.dart';
 import 'transaction_page.dart';
 import 'wallet_page.dart';
 
@@ -21,8 +22,8 @@ class MainPage extends StatelessWidget {
           return TransactionPage();
         case 2:
           return WalletPage();
-        // case 3:
-        //   return SettingPage();
+        case 3:
+          return SettingPage();
         default:
           return HomePage();
       }
