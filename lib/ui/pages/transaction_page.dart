@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_airplane/cubit/transaction_cubit/transaction_cubit.dart';
 import 'package:flutter_airplane/theme/theme.dart';
@@ -12,9 +13,10 @@ class TransactionPage extends StatefulWidget {
 }
 
 class _TransactionPageState extends State<TransactionPage> {
+  User? user = FirebaseAuth.instance.currentUser;
   @override
   void initState() {
-    context.read<TransactionCubit>().fetchTransactions();
+    context.read<TransactionCubit>().fetchTransactions(user?.email ?? '');
     super.initState();
   }
 

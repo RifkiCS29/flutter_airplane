@@ -420,6 +420,8 @@ class ChooseSeatPage extends StatelessWidget {
                       vat: 0.1,
                       price: price,
                       grandTotal: price + (price * 0.1).toInt(),
+                      createdAt: DateTime.now(),
+                      updatedAt: DateTime.now(),
                     ),
                   ),
                 ),

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_airplane/cubit/auth_cubit/auth_cubit.dart';
 import 'package:flutter_airplane/cubit/transaction_cubit/transaction_cubit.dart';
@@ -15,6 +16,7 @@ class CheckoutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    User? user = FirebaseAuth.instance.currentUser;
     Widget route() {
       return Container(
         margin: EdgeInsets.only(top: 50),
@@ -357,7 +359,7 @@ class CheckoutPage extends StatelessWidget {
           return CustomButton(
             title: 'Pay Now',
             onPressed: () {
-              context.read<TransactionCubit>().createTransaction(transaction);
+              context.read<TransactionCubit>().createTransaction(transaction, user);
             },
             margin: EdgeInsets.only(top: 30),
           );
