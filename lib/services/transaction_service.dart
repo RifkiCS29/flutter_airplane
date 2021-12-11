@@ -29,12 +29,18 @@ class TransactionService {
   Future<List<TransactionModel>> fetchTransactions(String? email) async { 
     try {
       QuerySnapshot result = await _transactionReference
-        .where('userEmail', isEqualTo: email).get();
+        .where('userEmail', isEqualTo: email)
+        .get();
 
       List<TransactionModel> transactions = result.docs.map(
         (transaction) => TransactionModel.fromJson(
           transaction.id, transaction.data() as Map<String, dynamic>) 
       ).toList();
+
+      transactions.sort(
+        (TransactionModel a, TransactionModel b) =>
+          b.createdAt.compareTo(a.createdAt),
+      );
 
       return transactions;
     } catch (e) { 

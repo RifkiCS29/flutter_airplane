@@ -13,7 +13,6 @@ class TransactionModel extends Equatable {
   final int price;
   final int grandTotal;
   final DateTime createdAt;
-  final DateTime updatedAt;
 
   TransactionModel({
     this.id = '',
@@ -27,7 +26,6 @@ class TransactionModel extends Equatable {
     this.price = 0,
     this.grandTotal = 0,
     required this.createdAt,
-    required this.updatedAt,
   });
 
   factory TransactionModel.fromJson(String id, Map<String, dynamic> json) =>
@@ -44,7 +42,6 @@ class TransactionModel extends Equatable {
         price: json['price'],
         grandTotal: json['grandTotal'],
         createdAt: DateTime.parse(json['createdAt']),
-        updatedAt: DateTime.parse(json['updatedAt']),
       );
 
   @override
@@ -59,6 +56,5 @@ class TransactionModel extends Equatable {
         price,
         grandTotal,
         createdAt,
-        updatedAt
       ];
 }
