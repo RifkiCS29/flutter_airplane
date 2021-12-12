@@ -161,7 +161,7 @@ class _HomePageState extends State<HomePage> {
     } else if(hour >= 12 && hour <= 18 )  {
       return 'Good Afternoon';
     } else {
-      return 'Selamat Evening';
+      return 'Good Evening';
     }
   }
 }
