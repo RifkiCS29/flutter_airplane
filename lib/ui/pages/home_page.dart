@@ -103,7 +103,7 @@ class _HomePageState extends State<HomePage> {
           top: 30,
           left: defaultMargin,
           right: defaultMargin,
-          bottom: 100,
+          bottom: 80,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
